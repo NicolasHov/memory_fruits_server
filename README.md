@@ -1,5 +1,7 @@
 ## API for Memory Best Scores
 
+This is the backend for the Memory Game [NicolasHov/memory_react_fruits](https://github.com/NicolasHov/memory_react_fruits)
+
 ## ENDPOINTS
 
 to get list of Scores : 
