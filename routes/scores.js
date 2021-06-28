@@ -19,4 +19,18 @@ router.get('/', (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 });
 
+router.delete('/:id', (req, res, next) => {
+    const id = req.params.id;
+    Score.deleteOne({ _id: id }).then(
+      () => {
+        res.status(200).json({ message: 'Deleted!' });
+      }
+    ).catch(
+      (error) => {
+        res.status(400).json({ error: error });
+      }
+    );
+  });
+
+
 module.exports = router;
