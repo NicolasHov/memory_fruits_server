@@ -4,9 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const scoreRoutes = require('./routes/scores');
-
-const path = 'mongodb+srv://Admin:'+process.env.MONGO_PASSWORD+'@cluster0.haglt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-
+const path = 'mongodb+srv://Admin:' + process.env.MONGO_PASSWORD + '@cluster0.ypzya.mongodb.net/memory?retryWrites=true&w=majority'
 mongoose.connect(path,
     {
         useNewUrlParser: true,
