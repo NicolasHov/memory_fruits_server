@@ -4,11 +4,18 @@ command = "npm run build"
 publish = "build"
 functions = "functions"
 
+# A basic redirect rule
+# [[redirects]]
+# to = "/.netlify/functions/:splat"
+# from = "/*"
+# status = 200
+
+
 [[headers]]
 for = "/*"
 [headers.values]
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
+# X-Frame-Options = "DENY"
+# X-XSS-Protection = "1; mode=block"
 Content-Security-Policy = "default-src 'self';"
 
 [[plugins]]

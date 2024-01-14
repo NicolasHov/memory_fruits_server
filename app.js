@@ -1,3 +1,5 @@
+// old file before deploy to netlify
+
 // const express = require('express');
 // const bodyParser = require('body-parser');
 // const mongoose = require('mongoose');

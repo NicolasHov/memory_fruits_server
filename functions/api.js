@@ -7,8 +7,7 @@ require('dotenv').config();
 
 const scoreRoutes = require('../routes/scores');
 
-// const exp = require('constants');
-
+const exp = require('constants');
 
 //  ######### Connection mongo #########
 const dev_db_url =
@@ -35,6 +34,7 @@ if (process.env.NODE_ENV === 'development') {
 if (process.env.NODE_ENV === 'production') {
     console.log('production');
 }
+
 router.use(cors())
 router.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -45,10 +45,11 @@ router.use((req, res, next) => {
 
 router.use(bodyParser.json());
 
-app.get('/', (req, res, next) => {
-    res.send('home')
+router.get('/api', (req, res, next) => {
+    res.send('API')
 });
-router.use('/api/scores', scoreRoutes)
+
+router.use('/scores', scoreRoutes) // import from routes/scores.js
 
 app.use('./netlify/functions/api', router)
 module.exports.handler = serverless(app);
